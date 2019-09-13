@@ -1,0 +1,19 @@
+appName: AudioPreprocessing
+
+Data:
+    Name: ami-corpus
+    directories :
+      Audio:
+        type: "lapel"
+      #can be lapel or headset
+        path: "/amicorpus"
+
+      Segments:
+          path: "manual/ES2002a.A.segments.xml"
+
+      Words:
+          path: "manual/ES2002a.A.words.xml"
+
+      Meetings:
+          path: "manual/meetings.xml"
+
