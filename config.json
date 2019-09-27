@@ -1,0 +1,25 @@
+{
+  "appName": "AudioPreprocessing",
+  "Data": {
+    "Name": "ami-corpus",
+    "directories": {
+      "Audio": {
+        "type": "lapel",
+        "path": "/home/hindu/Datasets/amicorpus"
+      },
+      "Segments": {
+        "path": "/home/hindu/Datasets/ami_public_manual/segments"
+      },
+      "Words": {
+        "path": "/home/hindu/Datasets/ami_public_manual/words"
+      },
+      "Meetings": {
+        "path": "/home/hindu/Datasets/ami_public_manual/corpusResources/meetings.xml"
+      }
+    }
+  },
+  "OutputFolder": {
+    "path": "/home/hindu/AudioPreprocessing/SplitFiles"
+  }
+}
+
