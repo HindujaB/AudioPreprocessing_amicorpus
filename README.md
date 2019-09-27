@@ -33,6 +33,7 @@ This program processes the **AMI corpus** dataset of meetings in order to create
   
 ## Preprocessing structure
 
+![structure_diagram](images/preprocess_structure.png)
 
 ## How to use
 
