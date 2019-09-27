@@ -17,6 +17,17 @@ segments_folder = data['Data']['directories']['Segments']['path']
 words_folder = data['Data']['directories']['Words']['path']
 output_folder = data['OutputFolder']['path']
 
+
+def get_audio_type(audio_type_string):
+    switcher = {
+        "LAPEL" : "Lapel",
+        "HEADSET": "Headset",
+    }
+    return switcher.get(audio_type_string.upper(), "lapel")
+
+
+audio_type = get_audio_type(data['Data']['directories']['Audio']['type'])
+
 meeting_xml = xml.dom.minidom.parse(data['Data']['directories']['Meetings']['path'])
 meetings = meeting_xml.getElementsByTagName("meeting")
 
@@ -28,15 +39,11 @@ def generate_vocal_sound_list(words_file):
         vocal_sound_ids.append(vocal_sound.getAttribute("nite:id"))
 
 
-def get_audio_file(observation):
-    return audio_folder + "/" + observation + "/audio" + ".Lapel-" + channel + ".wav"
-
-
 # create audio chunks
 def generate_audio(channel, start_time, end_time, audio_index):
     start_ms = float(start_time) * 1000
     end_ms = float(end_time) * 1000
-    audio_dir = audio_files_per_meeting + "/" + observation + ".Lapel-" + channel + ".wav"
+    audio_dir = audio_files_per_meeting + "/" + observation + "."+audio_type+"-" + channel + ".wav"
     if not (os.path.exists(audio_dir)):
         return
     audio = AudioSegment.from_wav(audio_dir)
@@ -51,6 +58,7 @@ def generate_audio(channel, start_time, end_time, audio_index):
     audio_chunk.export(filename.format(end), format="wav")
     filenames.append(filename)
 
+
 # check if a chunk is a backchannel
 def check_vocal_sound(word_id_list):
     start_id = word_id_list[1].replace('..', '').replace(')', '')
@@ -62,6 +70,7 @@ def check_vocal_sound(word_id_list):
         return True
     else:
         return False
+
 
 # create audio chunks for each meeting and each speaker
 for meeting in meetings:
