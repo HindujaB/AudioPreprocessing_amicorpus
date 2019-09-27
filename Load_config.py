@@ -18,9 +18,10 @@ words_folder = data['Data']['directories']['Words']['path']
 output_folder = data['OutputFolder']['path']
 
 
+# set audio type string for finding suitable audio file
 def get_audio_type(audio_type_string):
     switcher = {
-        "LAPEL" : "Lapel",
+        "LAPEL": "Lapel",
         "HEADSET": "Headset",
     }
     return switcher.get(audio_type_string.upper(), "lapel")
@@ -43,7 +44,7 @@ def generate_vocal_sound_list(words_file):
 def generate_audio(channel, start_time, end_time, audio_index):
     start_ms = float(start_time) * 1000
     end_ms = float(end_time) * 1000
-    audio_dir = audio_files_per_meeting + "/" + observation + "."+audio_type+"-" + channel + ".wav"
+    audio_dir = audio_files_per_meeting + "/" + observation + "." + audio_type + "-" + channel + ".wav"
     if not (os.path.exists(audio_dir)):
         return
     audio = AudioSegment.from_wav(audio_dir)
@@ -108,5 +109,6 @@ for meeting in meetings:
                     end_time = word.getAttribute("endtime")
                     break
             generate_audio(channel, start_time, end_time, audioIndex)
+
 # save the generated file paths to filenames.txt
 np.savetxt(os.path.join(output_folder, 'filenames.txt'), filenames, fmt='%s')
