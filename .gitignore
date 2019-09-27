@@ -1,2 +1,4 @@
 /SplitFiles/filenames.txt
 /venv
+/.gitignore
+/.idea
