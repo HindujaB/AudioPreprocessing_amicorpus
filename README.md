@@ -28,6 +28,9 @@ This program processes the **AMI corpus** dataset of meetings in order to create
   },
   "OutputFolder": {
     "path": "<PATH_OF_THE_OUTPUT_FOLDER>"
+  },
+  "CombinedOutputFolder": {
+    "path": "<PATH_OF_THE_COMBINED_FILES_FOLDER>"
   }
    ```
   
@@ -37,4 +40,5 @@ This program processes the **AMI corpus** dataset of meetings in order to create
 
 ## How to use
 
-run 'Segment_audio.py'
+* run 'Segment_audio.py'
+* To  combine the segmented audio files of each meeting according to each speaker, run 'Combine_folders.py'
