@@ -19,7 +19,10 @@
     }
   },
   "OutputFolder": {
-    "path": "/AudioPreprocessing/SplitFiles"
+    "path": "/SplitFiles"
+  },
+  "CombinedOutputFolder": {
+    "path": "/CombinedFiles"
   }
 }
 

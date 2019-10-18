@@ -48,7 +48,7 @@ def generate_audio(channel, start_time, end_time, audio_index):
     if not (os.path.exists(audio_dir)):
         return
     audio = AudioSegment.from_wav(audio_dir)
-    meeting_directory = output_folder + '/samples/' + observation
+    meeting_directory = output_folder + '/' + observation
     vocal_directory = meeting_directory + "/" + observation + "-" + channel
     if not (os.path.exists(meeting_directory)):
         os.mkdir(meeting_directory)
@@ -80,7 +80,6 @@ for meeting in meetings:
     audio_files_per_meeting = audio_folder + "/" + observation + "/audio"
     speakers = meeting.getElementsByTagName("speaker")
     for speaker in speakers:
-        print(len(speakers))
         nxt_agent = speaker.getAttribute("nxt_agent")
         channel, participant = speaker.getAttribute("channel"), speaker.getAttribute("global_name")
         if not (os.path.exists(words_folder + "/" + observation + "." + nxt_agent + ".words.xml") and os.path.exists(
@@ -110,5 +109,5 @@ for meeting in meetings:
                     break
             generate_audio(channel, start_time, end_time, audioIndex)
 
-# save the generated file paths to filenames.txt
-np.savetxt(os.path.join(output_folder, 'filenames.txt'), filenames, fmt='%s')
+# save the generated file paths to filepaths.txt
+np.savetxt(os.path.join(output_folder, 'filepaths.txt'), filenames, fmt='%s')
