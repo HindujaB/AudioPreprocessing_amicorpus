@@ -14,7 +14,10 @@
         "path": "/ami_public_manual/words"
       },
       "Meetings": {
-        "path": "/ami_public_manual/corpusResources/meetings.xml"
+        "path": "meetings.xml"
+      },
+      "Participants": {
+        "path": "participants.xml"
       }
     }
   },
@@ -23,6 +26,9 @@
   },
   "CombinedOutputFolder": {
     "path": "/CombinedFiles"
+  },
+  "SpeakerOutputFolder": {
+    "path": "/AMI_CORPUS_Files"
   }
 }
 
