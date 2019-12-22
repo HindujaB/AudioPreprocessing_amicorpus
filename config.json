@@ -28,7 +28,10 @@
     "path": "/CombinedFiles"
   },
   "SpeakerOutputFolder": {
-    "path": "/AMI_CORPUS_Files"
+    "path": "/Speaker_Files"
+  },
+  "FinalOutputFolder": {
+    "path": "/Output_Files"
   }
 }
 

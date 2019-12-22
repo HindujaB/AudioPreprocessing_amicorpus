@@ -48,4 +48,5 @@ This program processes the **AMI corpus** dataset of meetings in order to create
 
 * run 'Segment_audio.py'
 * To combine the audio files according to meeting participants, run 'Analyse_speaker.py'
+* To remove shorter audio segments and rename the files according to speaker, run 'Reformat_Files.py'
 * To  combine the segmented audio files of each meeting according to each speaker, run 'Combine_folders.py'
